@@ -6,74 +6,81 @@ math = true
 title = "Hugo-Tufte Features"
 subtitle = "Fancy Subtitle"
 toc = true
-categories = ["mathjax", "latex", "tufte-css"]
+categories = ["katex", "latex", "tufte-css"]
 
 
 +++
 
 This is a quick demonstration post.  It serves as an example of the features
-of this theme.  One of them is \\( \LaTeX \\) via MathJax. 
+of this theme.  One of them is $ \LaTeX $ via [Katex](https://katex.org/). 
 {{< section "begin" >}}
 ## A Bit About Mathematics
 
-{{% epigraph pre="Shawn O'Hare, " cite="Math is Fun" %}}
+{{< epigraph pre="Shawn O'Hare, " cite="Math is Fun" >}}
 This is an example of an epigraph with some math
-\\(\mathbb N \subseteq \mathbb R \\)
+$ \mathbb N \subseteq \mathbb R $
 to start the beginning of a section.
-{{% /epigraph %}}
+{{< /epigraph >}}
 
 <!--more-->
 
 ### Inline
 Some inline math:
-{{% marginnote "mn-example" %}}This is a margin note.{{% /marginnote %}}
-$e^{i \pi} = -1$ and \\(\sqrt{-1} = i \\)
-and \\( a_2 = 3 \\).
+{{< marginnote "mn-example" >}}This is a margin note.{{< /marginnote >}}
+$e^{i \pi} = -1$
+ and $\sqrt{-1} = i $
+and $ a_2 = 3 $.
 
 ### Display
-And display math using escaped brackets `\\[`:
-{{% sidenote "sn-example" %}}This is a sidenote!{{% /sidenote %}}
-\\[
+And display math using this symbol `$$`:
+{{< sidenote "sn-example" >}}This is a sidenote!{{< /sidenote >}}
+$$
   -- \cdot_H -- \colon B(G,H) \times B(H, K) \to B(G, K), \quad ([X], [Y]) \mapsto [X \times_H Y].
-\\]
+$$
 
 ### Environments
 
 Currently, certain $\LaTeX$ environments need to be escaped so that
-the markdown processor does not override MathJax.  Currently, display
+the markdown processor does not override Katex.  Currently, display
 environments should be enclosed in `<p>` tags and blank lines.
 For instance:
 
 <p>
-\begin{align*}  
+$$
+\begin{aligned}  
   \mu(A) &= \iint_{I^2} \chi_A (x,y) \ d(x,y) 
   = \int_I \left( \int_I  \chi_A (x,y) \ dx\right) dy 
   = \int_I 0 \ dy= 0 \quad \text{and} \\  
   \mu(A) &=\iint_{I^2}  \chi_A (x,y) \ d(x,y) 
   = \int_I \left(  \int_I \chi_A (x,y) \ dy \right) dx 
   =\int_I dx = 1,
-\end{align*} 
+\end{aligned} 
+$$
 </p>
+<!-- See https://github.com/jgm/pandoc/issues/3953#issuecomment-334670625 -->
 
 is produced from
-```
+
+```txt
 <p>
-\begin{align*}  
+$$
+\begin{aligned}  
   \mu(A) &= \iint_{I^2} \chi_A (x,y) \ d(x,y) 
   = \int_I \left( \int_I  \chi_A (x,y) \ dx\right) dy 
   = \int_I 0 \ dy= 0 \quad \text{and} \\  
   \mu(A) &=\iint_{I^2}  \chi_A (x,y) \ d(x,y) 
   = \int_I \left(  \int_I \chi_A (x,y) \ dy \right) dx 
   =\int_I dx = 1,
-\end{align*} 
+\end{aligned} 
+$$
 </p>
 ```
 
 ### Blockquotes
 Some blockquotes.  But first, we try to manually cite via
-<cite>This is between cite tags and has math: \\(e^x \\)</cite>
+<cite>This is between cite tags and has math: $e^x $</cite>
 
-{{% blockquote cite="www.shawnohare.com" footer="Shawn O'Hare" %}}
+{{< blockquote cite="www.shawnohare.com" footer="Shawn O'Hare" >}}
 This is a blockquote with two paragraphs, that employs the
 theme's `blockquote` shortcode. Lorem ipsum dolor sit amet,
 consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
@@ -82,7 +89,7 @@ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
 id sem consectetuer libero luctus adipiscing.
 Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-{{% /blockquote %}}
+{{< /blockquote >}}
 
 ### New thoughts
 
@@ -94,7 +101,7 @@ the `newthought` shortcode.
 ### Code
 As an example of some inline code: `go test -v -short`.
 And this is some block-code:
-```go
+```go {linenos=table,hl_lines=["2-5"],linenostart=199}
 package main
 
 import "log"
@@ -109,6 +116,24 @@ func main() {
   log.Println(y)
 }
 ```
+
+Here's an example without line numbers. 
+```go {hl_lines=["2-5"],linenostart=199}
+package main
+
+import "log"
+
+func add(x int, y int) int {
+  log.Println("We are going to take the sum of two numbers, and leave a very very very long comment.")
+  return x + y
+}
+
+func main() {
+  y := add(1, 2)
+  log.Println(y)
+}
+```
+
 ### Figure
 Below we have an example of a regular width figure.
 {{< figure
@@ -124,7 +149,8 @@ Below we have an example of a regular width figure.
  >}}
 {{< section "end" >}}
 
-And now we exhibit a margin figure.
+
+
 {{< figure
   src="https://edwardtufte.github.io/tufte-css/img/rhino.png"
   class="class param"
@@ -134,10 +160,11 @@ And now we exhibit a margin figure.
   label="mn-export-import"
   caption="This is the image caption."
   attr="Image attribution"
-  attrlink="attribute link"
+  attrlink="https://edwardtufte.github.io/tufte-css"
   alt="alt"
   link="link"
  >}}
+ But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate.
 {{< section "end" >}}
 
 Below is a full-width figure.

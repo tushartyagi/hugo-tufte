@@ -1,19 +1,11 @@
-<!-- Load MathJax, if necessary. -->
+<!-- Load Katex, if necessary. -->
 {{ if or .Params.math .IsHome }}
-  {{ partial "math.html" . }}
+    {{ partial "math.html" . }}
 {{ end }}
 
-<!-- Syntax highlighting -->
-<!-- {{ partial "highlight.html" . }} -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
 <!-- Pure css -->
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-<!--<![endif]-->
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
 
 <!-- Fonts -->
 <!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"> -->
@@ -21,9 +13,12 @@
 <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'> -->
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
 
-<!-- Main CSS file based on Pure blog layout -->
-<link rel="stylesheet" href="{{ "/css/tufte.css" | absURL }}">
-<link rel="stylesheet" href="{{ "/css/hugo-tufte.css" | absURL }}">
-<link rel="stylesheet" href="{{ "/css/hugo-tufte-override.css" | absURL }}">
+{{ $htoptions := (dict "targetPath" "/css/hugo-tufte.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $htstyle := resources.Get "scss/hugo-tufte.scss"| resources.ExecuteAsTemplate "main.scss" .  | resources.ToCSS $htoptions }}
+<link rel="stylesheet" href="{{ $htstyle.Permalink | relURL }}">
+
+<link rel="stylesheet"  href="{{ "/css/hugo-tufte-override.css" | relURL }}">
+
+

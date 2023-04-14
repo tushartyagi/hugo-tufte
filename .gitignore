@@ -34,12 +34,19 @@ Temporary Items
 
 ## hugo
 
+*.patch
+
 # Generated files by hugo
 /public/
+exampleSite/public/*
 /resources/_gen/
 /exampleSite/resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
+
+# Node
+package-lock.json
+node_modules
 
 # Executable may be added to repository
 hugo.exe
