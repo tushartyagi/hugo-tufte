@@ -2,5 +2,5 @@
   <p>
     {{ .Inner | markdownify }}
   </p>
-  <footer>{{ .Get "footer" }}</footer>
+  <footer>{{ .Get "footer" }}{{ with .Get "cite" }}, <cite>{{ . }}</cite>{{ end }}</footer>
 </blockquote>
