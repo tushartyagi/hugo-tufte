@@ -4,8 +4,6 @@
 /* accomodate a blog-like site. */
 /* ------------------------------------------------------------------------ */
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@351&display=swap");
-
 /* When setting the primary font stack, apply it to the Pure grid units along */
 /* with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use */
 /* specific font stacks to ensure the greatest OS/browser compatibility. */
@@ -21,7 +19,7 @@ article,
 header,
 footer,
 .pure-g [class*="pure-u"] {
-    font-family: et-book, "Noto Serif SC", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-family: et-book, "Noto Serif SC", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif, "Noto Emoji";
 }
 
 p {
@@ -29,7 +27,7 @@ p {
 }
 
 code {
-    font-family: "Fira Code", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: Menlo, Meslo, Courier, monospace;
     font-size: 1.125rem;
     line-height: 1.6;
 }
