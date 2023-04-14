@@ -4,6 +4,7 @@
 
 ***This theme isn't actively maintained, if you want a new feature please file a pull request.***
 
+
 Hugo-Tufte is a minimalist blog-like theme for the
 [static site generator Hugo](https://gohugo.io) that
 attempts to be a faithful implementation of the
