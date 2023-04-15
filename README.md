@@ -1,6 +1,13 @@
 # Tufte Hugo Theme
+
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 [![build github pages](https://github.com/slashformotion/hugo-tufte/actions/workflows/build-site-ghpages.yml/badge.svg)](https://github.com/slashformotion/hugo-tufte/actions/workflows/build-site-ghpages.yml)
+
+## Fork notes by loikein:
+
+I just do whatever I want to make the theme better suit my needs. Not intended as a continuation of the original projects.
+
+## Original readme:
 
 ***This theme isn't actively maintained, if you want a new feature please file a pull request.***
 
