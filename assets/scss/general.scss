@@ -4,44 +4,16 @@
 /* accomodate a blog-like site. */
 /* ------------------------------------------------------------------------ */
 
-/* When setting the primary font stack, apply it to the Pure grid units along */
-/* with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use */
-/* specific font stacks to ensure the greatest OS/browser compatibility. */
-html,
-button,
-input,
-select,
-textarea,
-p,
-nav,
-section,
-article,
-header,
-footer,
-.pure-g [class*="pure-u"] {
-    font-family: et-book, "Noto Serif SC", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif, "Noto Emoji";
-}
-
-p {
-    text-align: justify;
-}
-
-code {
-    font-family: Menlo, Meslo, Courier, monospace;
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
-.sidenote,
-.marginnote {
-    margin-right: -55%;
-    width: 45%;
-}
-
-
 /* ------------------------------------------------------------------------ */
 /* Generic content, such as the index list pages */
 /* ------------------------------------------------------------------------ */
+
+hr {
+    margin-left: 0;
+    width: 75%;
+    max-width: 45rem;
+    border-color: rgba(250,250,250,0.25);
+}
 
 /* Content Title styling.  This is mostly to avoid underlying links. */
 h1.content-title {
@@ -54,12 +26,6 @@ h1.content-title a:visited {
     text-decoration: none;
     color: inherit;
 }
-h1.content-title a:hover,
-h1.content-title a:focus {
-    color: darkgray;
-}
-
-
 
 /* ------------------------------------------------------------------------ */
 /* Styling for listing pages. */

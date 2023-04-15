@@ -31,9 +31,6 @@
   {{- if eq $style "tip" }}{{ $icon = default "lightbulb" }}{{ end }}
 {{- end }}
 {{- $icon = trim $icon " " }}
-{{- if and $icon (not (findRE ".*?\\bfa-\\w.*?" $icon)) }}
-  {{- $icon = printf "fa-fw fas fa-%s" $icon }}
-{{- end }}
 {{- $iconposition := .iconposition | default "left" }}
 {{- with $context }}
 <span class="btn cstyle {{ $style }}"{{ if $color }} style="--VARIABLE-BOX-color: {{ $color }};"{{ end }}>
@@ -43,11 +40,11 @@
   <a{{ if $href }} href="{{ $href }}"{{ if gt (len $target) 0 }} target="{{ $target }}"{{ end }}{{ end }}>
   {{- end }}
     {{- if and $icon (eq $iconposition "left") }}
-    <i class="{{ $icon }}"></i>
+    {{ $icon }}
     {{- end }} 
     {{ $title | safeHTML }}
     {{- if and $icon (eq $iconposition "right") }}
-    <i class="{{ $icon }}"></i>
+    {{ $icon }}
     {{- end }}
   {{- if $isButton }}
   </button>
