@@ -1,4 +1,7 @@
-{{ $marginnoteDomIdSuffix := .Ordinal }}
-<label for="marginnote-{{.Page.File.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle marginnote-ind">&#128172;</label>
-<input type="checkbox" id="marginnote-{{.Page.File.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle"/>
-<span class="marginnote"><span class="marginnote-ind">&#128172;</span> {{ .Inner | markdownify}}</span>
+{{- $marginnoteDomIdSuffix := (add .Ordinal 1) -}}
+{{- $ind := .Get "ind" | default .Site.Params.marginNoteInd -}}
+<label for="marginnote-{{ $marginnoteDomIdSuffix }}" class="margin-toggle marginnote-ind">{{ $ind }}</label>
+<input type="checkbox" id="marginnote-{{ $marginnoteDomIdSuffix }}" class="margin-toggle"/>
+<span class="marginnote">
+{{ .Inner | markdownify}}
+</span>
