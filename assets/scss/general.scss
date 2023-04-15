@@ -23,6 +23,10 @@ a.heading-anchor {
     visibility: collapse;
 }
 
+h2 {
+    margin-top: 5.5rem;
+}
+
 h2:hover > a.heading-anchor,
 h3:hover > a.heading-anchor {
     display: inline;
@@ -98,13 +102,26 @@ table.lntable {
 /* ------------------------------------------------------------------------ */
 /* Styling for footnotes. */
 /* ------------------------------------------------------------------------ */
+.footnotes hr {
+    margin-top: 4.4em;
+}
+
 .footnotes ol {
     width: 55%;
-}
-.footnotes ol li p {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    margin-top: 4.4rem;
+
+    li {
+        p {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            a.footnote-backref {
+                font-size: 1.2rem;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 /* ------------------------------------------------------------------------ */
@@ -118,10 +135,10 @@ table.lntable {
 
 mjx-container[jax="CHTML"][display="true"],
 .katex-display {
-  overflow: auto;
-  overflow-y: hidden;
-/*   -ms-overflow-style: none;
-  scrollbar-width: none; */
+      overflow: auto;
+      overflow-y: hidden;
+/*     -ms-overflow-style: none;
+    scrollbar-width: none; */
 }
 
 
