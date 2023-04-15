@@ -361,20 +361,39 @@ span.newthought {
     font-size: 1.2em;
 }
 
+.margin-toggle {
+    cursor: pointer;
+}
+
+// accessibility feature: make label focus-able
 input.margin-toggle {
-    display: none;
+    position: absolute;
+    outline: none;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin-left: 5px;
+    margin-top: 5px;
+    z-index: -100;
+}
+
+label:has(+ input.margin-toggle:focus) {
+  outline: medium auto currentColor;
+  outline: medium auto invert;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
 }
 
 label.sidenote-number {
     display: inline;
 }
 
-label.margin-toggle:not(.sidenote-number) {
+label.marginnote-ind {
     display: none;
 }
 
 @media (max-width: 760px) {
-    label.margin-toggle:not(.sidenote-number) {
+    label.marginnote-ind {
         display: inline;
     }
     .sidenote,
@@ -391,9 +410,6 @@ label.margin-toggle:not(.sidenote-number) {
         margin: 1rem 2.5%;
         vertical-align: baseline;
         position: relative;
-    }
-    label {
-        cursor: pointer;
     }
     pre.code {
         width: 90%;

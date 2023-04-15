@@ -27,4 +27,4 @@
 {{ $htstyle := resources.Get "scss/hugo-tufte.scss"| resources.ExecuteAsTemplate "main.scss" .  | resources.ToCSS $htoptions }}
 <link rel="stylesheet" href="{{ $htstyle.Permalink | relURL }}">
 
-<link rel="stylesheet"  href="{{ "/css/hugo-tufte-override.css" | relURL }}">
+<link rel="stylesheet" href="{{ "/css/hugo-tufte-override.css" | relURL }}">

@@ -33,18 +33,18 @@
 {{- $icon = trim $icon " " }}
 {{- $iconposition := .iconposition | default "left" }}
 {{- with $context }}
-<span class="btn cstyle {{ $style }}"{{ if $color }} style="--VARIABLE-BOX-color: {{ $color }};"{{ end }}>
+<span class="btn {{ $style }}"{{ if $color }} style="--VARIABLE-BOX-color: {{ $color }};"{{ end }}>
   {{- if $isButton }}
   <button{{ if $href }} onclick="{{ $href | safeJS }}"{{ end }}{{ if gt (len $type) 0 }} type="{{ $type }}"{{ end }}>
   {{- else }}
   <a{{ if $href }} href="{{ $href }}"{{ if gt (len $target) 0 }} target="{{ $target }}"{{ end }}{{ end }}>
   {{- end }}
     {{- if and $icon (eq $iconposition "left") }}
-    {{ $icon }}
+    <span class="icon">{{ $icon }}</span>
     {{- end }} 
     {{ $title | safeHTML }}
     {{- if and $icon (eq $iconposition "right") }}
-    {{ $icon }}
+    <span class="icon">{{ $icon }}</span>
     {{- end }}
   {{- if $isButton }}
   </button>
