@@ -1,26 +1,26 @@
 {{ define "main" }}
-<div id="layout" class="pure-g">
-<article class="pure-u-1">
+<article id="main">
   {{ partial "brand.html" . }}
   {{ with .Content }}
-  <section>
-  {{ . }}
-  </section>
+    <section>
+    {{ . }}
+    </section>
   {{ end }}
-  {{ range where .Site.RegularPages "Type" "posts" }}
-
-  <h2 class="content-title">
-    {{ if .IsNode }}
-    <a href="{{ .Permalink }}">{{ .Title}}</a>
-    {{ else }}
-    <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
+  <section class="page-list">
+  {{ range .Site.RegularPages }}
+  {{/* range where .Site.RegularPages "Type" "posts" */}}
+    {{ if ne .Draft true}}
+    <h2 class="content-title">
+      {{ if .IsNode }}
+      <a href="{{ .Permalink }}">{{ .Title}}</a>
+      {{ else }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
+      {{ end }}
+    </h1>
+    <p>{{ truncate 140 .Summary }}</p>
     {{ end }}
-  </h1>
-
-  <p>{{ truncate 140 .Summary }}</p>
-
-  {{ end  }}
+  {{ end }}
+  </section>
   {{ partial "footer.html" . }}
 </article>
-</div>
 {{ end }}

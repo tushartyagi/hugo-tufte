@@ -56,7 +56,7 @@ Also notice how Tufte CSS includes separate font files for bold (strong) and ita
 
 <span class="sans">If you prefer sans-serifs, use the sans class. It relies on Gill Sans, Tufte’s sans-serif font of choice.</span>
 
-Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a [dummy example](https://edwardtufte.github.io/tufte-css/#) that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. {{< marginnote >}}Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.{{< /marginnote >}} However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard `text-decoration`. Credit goes to Adam Schwartz for that technique. 
+Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a [dummy example](#) that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. {{< marginnote ind="⊕" >}}Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.{{< /marginnote >}} However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard `text-decoration`. Credit goes to Adam Schwartz for that technique. 
 
 As always, these design choices are merely one approach that Tufte CSS provides by default. Other approaches can also be made to work. The goal is to make sentences readable without interference from links, as well as to make links immediately identifiable even by casual web users.
 
@@ -190,7 +190,7 @@ Extended code examples should live in a `code` element within a `pre` element. T
 
 ## ImageQuilts
 
-Tufte CSS provides support for Edward Tufte and Adam Schwartz’s [ImageQuilts](http://imagequilts.com/).{{< marginnote >}}This is not supported as of 2023-04-17.{{< /marginnote >}} See the [ET forum announcement thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003wk) for more on quilts. Some have ragged edges, others straight. Include these images just as you would any other `figure`.
+Tufte CSS provides support for Edward Tufte and Adam Schwartz’s [ImageQuilts](http://imagequilts.com/).{{< marginnote ind="⊕" >}}This is not supported as of 2023-04-17.{{< /marginnote >}} See the [ET forum announcement thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003wk) for more on quilts. Some have ragged edges, others straight. Include these images just as you would any other `figure`.
 
 This is an ImageQuilt surveying Chinese calligraphy, placed in a full-width figure to accomodate its girth:
 
