@@ -3,9 +3,9 @@
 {{- else -}}
 {{- $.Page.Scratch.Set "sidenoteCounter" 1 -}}
 {{- end -}}
-{{- $sidenoteDomIdSuffix := $.Page.Scratch.Get "sidenoteCounter" -}}
-<label for="sidenote-{{ $sidenoteDomIdSuffix }}" class="margin-toggle sidenote-number">({{ $sidenoteDomIdSuffix }})</label>
-<input type="checkbox" id="sidenote-{{ $sidenoteDomIdSuffix }}" class="margin-toggle"/>
+{{- $label := $.Page.Scratch.Get "sidenoteCounter" -}}
+<label for="sidenote-{{ $label }}" class="margin-toggle sidenote-number">({{ $label }})</label>
+<input type="checkbox" id="sidenote-{{ $label }}" class="margin-toggle"/>
 <span class="sidenote">
-<span class="sidenote-number">({{ $sidenoteDomIdSuffix }})</span>{{ .Inner | markdownify }}
+<span class="sidenote-number">({{ $label }})</span>{{ .Inner | markdownify }}
 </span>

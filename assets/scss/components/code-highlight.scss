@@ -29,6 +29,8 @@ $ht-code-border-radius: .4em;
 
         &::before{
             content: "> ";
+            // font-family: "Noto Emoji";
+            font-family: inherit;
             position: absolute;
             left: 0;
             color: #111;
@@ -65,7 +67,7 @@ $ht-code-border-radius: .4em;
 
 
 @media screen and (max-width: 760px) {
-    .highlight .chroma {
+    .highlight {
         width: 90%;
     }
 }
