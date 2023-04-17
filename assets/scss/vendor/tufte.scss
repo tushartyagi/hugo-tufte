@@ -151,7 +151,7 @@ p {
 
 /* Chapter Epigraphs */
 div.epigraph {
-    margin: 5em 0;
+    margin: 3em 0;
 }
 
 div.epigraph > blockquote {
@@ -185,7 +185,7 @@ blockquote p {
 blockquote footer {
     width: 50%;
     font-size: 1.1rem;
-    text-align: right;
+    text-align: right !important;
 }
 
 ol,
