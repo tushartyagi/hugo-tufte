@@ -5,7 +5,12 @@
 <meta name="description"
     content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }} ">
 <link rel="canonical" href="{{ .Permalink }}" />
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="{{"favicon/favicon.ico" | relURL}}">
+<!-- favicon -->
+{{ if .Site.Params.favicon }}
+<link rel="icon" href="{{ .Site.Params.favicon | absURL }}" />
+{{ end }}
+{{ if .Site.Params.touchicon }}
+<link rel="apple-touch-icon" href="{{ .Site.Params.touchicon | absURL }}" />
+{{ end }}
   {{ partial "header.includes.html" . }}
 </head>
