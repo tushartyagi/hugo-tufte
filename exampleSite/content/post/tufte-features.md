@@ -1,86 +1,95 @@
-+++
-author = "AUTHOR NAME"
-date = "2016-02-20T13:56:01-08:00"
-meta = true
-math = true
-title = "Hugo-Tufte Features"
-subtitle = "Fancy Subtitle"
-toc = true
-categories = ["katex", "latex", "tufte-css"]
+---
+author: Totally famous person
+date: '2016-02-20T13:56:01-08:00'
+title: The big old test page
+subtitle: Fancy Subtitle
+meta: true
+math: true
+toc: true
+# hideDate: true
+# hideReadTime: true
+categories: [katex, latex, tufte-css]
+---
+
+## loikein's features
+
+### Emojis!
+
+Powered by [Noto Emoji font](https://emojipedia.org/noto-emoji/).
+
+We really like cats. Yes, they are fluffy and happy. 🐈🐱
+
+🪷🫶🤍😊💀🔥
 
 
-+++
+### Button
 
-This is a quick demonstration post.  It serves as an example of the features
-of this theme.  One of them is $ \LaTeX $ via [Katex](https://katex.org/). 
-{{< section "begin" >}}
-## A Bit About Mathematics
+{{< button
+style="primary"
+icon="✅"
+href="javascript:javascript:(function(){function checkFrames(w) {try {var inputs = w.document.getElementsByTagName('input');for (var i=0; i < inputs.length; i++) {if (inputs[i].type && inputs[i].type == 'checkbox'){inputs[i].checked = true;}}} catch (e){}if(w.frames && w.frames.length>0){for(var i=0;i<w .frames.length;i++){var fr=w.frames[i];checkFrames(fr);}}}checkFrames(window);})()"
+>}}
+Open all notes
+{{< /button >}}
 
-{{< epigraph pre="Shawn O'Hare, " cite="Math is Fun" >}}
+{{< button
+style="primary"
+icon="❎"
+href="javascript:javascript:(function(){function checkFrames(w) {try {var inputs = w.document.getElementsByTagName('input');for (var i=0; i < inputs.length; i++) {if (inputs[i].type && inputs[i].type == 'checkbox'){inputs[i].checked = false;}}} catch (e){}if(w.frames && w.frames.length>0){for(var i=0;i<w .frames.length;i++){var fr=w.frames[i];checkFrames(fr);}}}checkFrames(window);})()"
+>}}
+Close all notes
+{{< /button >}}
+
+{{< button
+style="primary"
+icon="🔄"
+href="javascript:javascript:(function(){function checkFrames(w) {try {var inputs = w.document.getElementsByTagName('input');for (var i=0; i < inputs.length; i++) {if (inputs[i].type && inputs[i].type == 'checkbox'){inputs[i].checked = !inputs[i].checked;}}} catch (e){}if(w.frames && w.frames.length>0){for(var i=0;i<w .frames.length;i++){var fr=w.frames[i];checkFrames(fr);}}}checkFrames(window);})()"
+>}}
+Toggle all notes
+{{< /button >}}
+
+
+### Cols (with `lang` option)
+
+{{< cols "zh-Hans,en,ja" >}}
+我是一个懒人。 {{< marginnote >}}这是一个边注。在屏幕很小的时候，它有一个可以点击展开的按钮。{{< /marginnote >}}{{< marginnote ind="🐱" >}}您可以在 `config.yaml` 中修改全站指示器，也可以使用 `ind` 选项为每一个边注单独设置按钮。{{< /marginnote>}}{{< marginnote ind="⚠" >}}在这个版本中，我提升了可访问性，但不包括[用不了 `:has` 的火狐](https://caniuse.com/css-has)。{{< /marginnote>}}
+||
+But sometimes you just have to get your hands dirty.
+
+This is the joy and the curse of a programmer. {{< sidenote >}}Sidenote numbers are consistent across the whole page. Good numbers.{{< /sidenote >}}
+||
+さらに、なんと！日本語もいけます。 {{< sidenote >}}読めないのか？私は大丈夫だが。{{< /sidenote >}}
+{{< /cols >}}
+
+## Tufte features
+
+### Marginnote and sidenote
+
+This is what you came here for. {{< marginnote >}}This is a marginnote. It has no indicators on big screens.{{< /marginnote >}} Be honest. {{< sidenote >}}This is a sidenote! It has a little number.{{< /sidenote >}}
+
+### Epigraph
+
+{{< epigraph author="Shawn O'Hare" cite="Math is Fun" detail="p.8" >}}
 This is an example of an epigraph with some math
-$ \mathbb N \subseteq \mathbb R $
+`$ \mathbb N \subseteq \mathbb R $`
 to start the beginning of a section.
 {{< /epigraph >}}
 
-<!--more-->
-
-### Inline
-Some inline math:
-{{< marginnote "mn-example" >}}This is a margin note.{{< /marginnote >}}
-$e^{i \pi} = -1$
- and $\sqrt{-1} = i $
-and $ a_2 = 3 $.
-
-### Display
-And display math using this symbol `$$`:
-{{< sidenote "sn-example" >}}This is a sidenote!{{< /sidenote >}}
-$$
-  -- \cdot_H -- \colon B(G,H) \times B(H, K) \to B(G, K), \quad ([X], [Y]) \mapsto [X \times_H Y].
-$$
-
-### Environments
-
-Currently, certain $\LaTeX$ environments need to be escaped so that
-the markdown processor does not override Katex.  Currently, display
-environments should be enclosed in `<p>` tags and blank lines.
-For instance:
-
-<p>
-$$
-\begin{aligned}  
-  \mu(A) &= \iint_{I^2} \chi_A (x,y) \ d(x,y) 
-  = \int_I \left( \int_I  \chi_A (x,y) \ dx\right) dy 
-  = \int_I 0 \ dy= 0 \quad \text{and} \\  
-  \mu(A) &=\iint_{I^2}  \chi_A (x,y) \ d(x,y) 
-  = \int_I \left(  \int_I \chi_A (x,y) \ dy \right) dx 
-  =\int_I dx = 1,
-\end{aligned} 
-$$
-</p>
-<!-- See https://github.com/jgm/pandoc/issues/3953#issuecomment-334670625 -->
-
-is produced from
-
-```txt
-<p>
-$$
-\begin{aligned}  
-  \mu(A) &= \iint_{I^2} \chi_A (x,y) \ d(x,y) 
-  = \int_I \left( \int_I  \chi_A (x,y) \ dx\right) dy 
-  = \int_I 0 \ dy= 0 \quad \text{and} \\  
-  \mu(A) &=\iint_{I^2}  \chi_A (x,y) \ d(x,y) 
-  = \int_I \left(  \int_I \chi_A (x,y) \ dy \right) dx 
-  =\int_I dx = 1,
-\end{aligned} 
-$$
-</p>
+```html
+{{</* epigraph author="Shawn O'Hare" cite="Math is Fun" detail="p.8" */>}}
+This is an example of an epigraph with some math
+`$ \mathbb N \subseteq \mathbb R $`
+to start the beginning of a section.
+{{</* /epigraph */>}}
 ```
 
-### Blockquotes
-Some blockquotes.  But first, we try to manually cite via
-<cite>This is between cite tags and has math: $e^x $</cite>
+### Blockquote
 
-{{< blockquote cite="www.shawnohare.com" footer="Shawn O'Hare" >}}
+Some blockquotes.  But first, we try to manually cite via
+
+<cite>This is between cite tags and has math: `$e^x $`</cite> {{< sidenote >}}Only use `$\KaTeX{}$`, you must.{{< /sidenote >}}
+
+{{< blockquote author="Shawn O'Hare" cite="www.shawnohare.com" >}}
 This is a blockquote with two paragraphs, that employs the
 theme's `blockquote` shortcode. Lorem ipsum dolor sit amet,
 consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
@@ -91,16 +100,155 @@ id sem consectetuer libero luctus adipiscing.
 Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 {{< /blockquote >}}
 
-### New thoughts
+```html
+{{</* blockquote author="Shawn O'Hare" cite="www.shawnohare.com" */>}}
+This is a blockquote with two paragraphs, that employs the
+theme's `blockquote` shortcode. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+...
+{{</* /blockquote */>}}
+```
 
-<span class="newthought">Sometimes a new thought</span> distinguishes a section,
-as here.  There are currently two ways to create one.  One way is with raw
-HTML such as: `<span class="newthought">...</span>"`.  The theme also provides
-the `newthought` shortcode.
+### Small-caps
+
+{{< newthought >}}Sometimes a new thought{{< /newthought >}} distinguishes a section, as here.
+
+```html
+{{</* newthought */>}}Sometimes a new thought{{</* /newthought */>}}
+```
+
+### Figure
+
+**Regular width figure:**
+
+{{< figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/exports-imports.png"
+  title="The image title"
+  label="mn-export-import"
+  caption="This is the image caption."
+  attr="[Image attribution](#)"
+  link="link"
+>}}
+
+```html
+{{</* figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/exports-imports.png"
+  title="The image title"
+  label="mn-export-import"
+  caption="This is the image caption."
+  attr="[Image attribution](#)"
+  link="link"
+*/>}}
+```
+
+
+**Margin figure:**
+
+Margin figures appear on the margin. Highly logical.
+{{< figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/rhino.png"
+  type="margin"
+  label="mn-rhino"
+  title="The image title"
+  caption="This is the image caption."
+  attr="[Image attribution](https://edwardtufte.github.io/tufte-css)"
+  alt="alt"
+  link="#"
+>}}
+Very importantly, they want some text to go with them, either before or after, with only one line break.
+
+No worries if you forgot to give your figure a `label`. Marginnote (either for figure or with figure inside) will be created if any one of the following conditions is met:
+
+1. Has `type="margin`; or
+2. Has `caption`; or
+3. Has `attr`.
+
+```html {hl_lines=[3]}
+{{</* figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/rhino.png"
+  type="margin"
+  title="The image title"
+  caption="This is the image caption."
+  attr="[Image attribution](https://edwardtufte.github.io/tufte-css)"
+  alt="alt"
+  link="#"
+*/>}}
+```
+
+**Full-width figure:**
+
+{{< figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/napoleons-march.png"
+  type="full"
+  label="mn-napoleonic-wars"
+  title="Napoleonic wars"
+  caption="This the image caption."
+  attr="[Image attribution](#)"
+  alt="Napoleonic wars"
+  link="#"
+>}}
+
+```html {hl_lines=[3]}
+{{</* figure
+  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/napoleons-march.png"
+  type="full"
+  label="mn-napoleonic-wars"
+  title="Napoleonic wars"
+  caption="This the image caption."
+  attr="[Image attribution](#)"
+  alt="Napoleonic wars"
+  link="#"
+*/>}}
+```
+
+
+## Normal Markdown tests
+
+Begin [test file](https://gist.github.com/loikein/27ef6913386b206d1b3c18b8e93c5768)…
+
+### Formatting
+
+**Bold**, __bold__, **加粗**
+
+*Italic*, _italic_, *斜体*
+
+<u>Underline</u>, <underline>underline</underline>
+
+<del>Strike</del>, <s>strike</s>, ~~strike~~, ~strike~, --strike--
+
+<mark>Highlight</mark>, =highlight=, ==highlight==
+
+<!-- Comments-->
+
+Footnote[^1], footnote[^2]
+
+[^1]: The linked footnote appears at the end of the document.
+
+[^2]: New lines
+
+---
+
+
+### Lists
+
+- `ul`
+- Unordered list
+
+1. `ol`
+1. Ordered list
+
+`dl`
+:   `dt`
+:   Description list
+
+- [x] Task list
+- [ ] Task list
 
 ### Code
-As an example of some inline code: `go test -v -short`.
-And this is some block-code:
+
+Inline `code`, `` `escape` ``, and <kbd>keystroke</kbd>
+
 ```go {linenos=table,hl_lines=["2-5"],linenostart=199}
 package main
 
@@ -118,6 +266,7 @@ func main() {
 ```
 
 Here's an example without line numbers. 
+
 ```go {hl_lines=["2-5"],linenostart=199}
 package main
 
@@ -134,58 +283,33 @@ func main() {
 }
 ```
 
-### Figure
-Below we have an example of a regular width figure.
-{{< figure
-  src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/exports-imports.png"
-  class="class param"
-  title="The image title."
-  caption="This is the image caption."
-  label="mn-export-import"
-  attr="Image attribution"
-  attrlink="attribute link"
-  alt="alt"
-  link="link"
- >}}
-{{< section "end" >}}
+### Font
 
+> 我能体に傷つけないで吞下 259 ml glass。
 
+> Four score and seven years ago our fathers brought forth upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
 
-{{< figure
-  src="https://edwardtufte.github.io/tufte-css/img/rhino.png"
-  class="class param"
-  type="margin"
-  label="mn-rhino"
-  title="The image title."
-  label="mn-export-import"
-  caption="This is the image caption."
-  attr="Image attribution"
-  attrlink="https://edwardtufte.github.io/tufte-css"
-  alt="alt"
-  link="link"
- >}}
- But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate.
-{{< section "end" >}}
+0 Oo Ii Ll 1 | 2 Z 5 s 8 Bb 6 # * ^ ~ \(\) {} \[\] . , : ; “ ‘ ’ \`
 
-Below is a full-width figure.
-{{< figure
-  src="https://edwardtufte.github.io/tufte-css/img/napoleons-march.png"
-  type="full"
-  label="mn-napoleonic-wars"
-  title="Napoleonic wars"
-  caption="This the image caption."
-  attr="Image attribution"
-  attrlink="attribute link"
-  alt="Napoleonic wars"
-  link="link"
- >}}
-{{< section "end" >}}
+```
+0 Oo Ii Ll 1 | 2 Z 5 s 8 Bb 6 # * ^ ~ () {} [] . , : ; “ ‘ ’ `
+```
 
-{{< div class="myclass" >}}
-## A Story About Cats
-Climb a tree, wait for a fireman jump to fireman then scratch his face sleep on dog bed, force dog to sleep on floor cat snacks, and eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap climb a tree, wait for a fireman jump to fireman then scratch his face put toy mouse in food bowl run out of litter box at full speed . See owner, run in terror chase mice, so thinking longingly about tuna brine for eat a plant, kill a hand for wake up human for food at 4am. Human is washing you why halp oh the horror flee scratch hiss bite scratch the furniture and rub face on owner. Loves cheeseburgers see owner, run in terror chew on cable. Thug cat ignore the squirrels, you'll never catch them anyway. Eat a plant, kill a hand find empty spot in cupboard and sleep all day so hide head under blanket so no one can see yet love to play with owner's hair tie rub face on everything i like big cats and i can not lie. Wake up human for food at 4am stare at the wall, play with food and get confused by dust yet then cats take over the world scamper. Inspect anything brought into the house get video posted to internet for chasing red dot. Brown cats with pink ears chew foot spit up on light gray carpet instead of adjacent linoleum. I am the best wake up human for food at 4am, meow spread kitty litter all over house, for meow. Knock dish off table head butt cant eat out of my own dish jump off balcony, onto stranger's head, chase ball of string scream at teh bath but climb leg, so unwrap toilet paper but destroy couch. Climb a tree, wait for a fireman jump to fireman then scratch his face. Leave hair everywhere swat turds around the house eat grass, throw it back up, and eat grass, throw it back up. Chase after silly colored fish toys around the house.
-{{< div "end" >}}
+### Inline HTML
 
-### We really like cats.
+ref: https://burk.io/2020/let-there-be-dark
 
-Yes, they are fluffy and happy.
+<div title="#282a36" style="height: 50px; width: 100px; background-color: #282a36; display: inline-block; border-style: solid; border-color: black; color:white; padding:10px;">#282a36</div>
+
+<div title="#f8f8f2" style="height: 50px; width: 100px; background-color: #f8f8f2; margin-right: 5px; display: inline-block; border-style: solid; border-color: black; color:black; padding:10px;">#f8f8f2</div>
+
+### LaTeX & Table
+
+`$\LaTeX{}$`
+
+`$$R_1 \begin{cases} >\mu_{2} \\ \leq \mu_{2} \end{cases}$$`
+
+| Message to agent 1 | `$M_1$`          |
+| ------------------ | -------------- |
+| Agent 1's action   | `$a_1$`          |
+| New finding        | `$R_1 \begin{cases} >\mu_{2} \\ \leq \mu_{2} \end{cases}$` |

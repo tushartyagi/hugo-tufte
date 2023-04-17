@@ -10,7 +10,7 @@ hideDate: true
 hideReadTime: true
 # categories: [tufte-css]
 ---
-Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
+Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.{{< marginnote ind="⚠" >}}This demo page is a technical replicate of the original [Tufte CSS](https://edwardtufte.github.io/tufte-css/) page on Edward Tufte's GitHub site. Information may not accurately reflect features of the hugo-tufte theme.{{< /marginnote >}}
 
 Tufte CSS was created by [Dave Liepmann](http://www.daveliepmann.com) and is now an Edward Tufte project. The original idea was cribbed from [Tufte-`$\LaTeX{}$`](https://tufte-latex.github.io/tufte-latex/) and [R Markdown’s Tufte Handout format](http://rmarkdown.rstudio.com/tufte_handout_format.html). We give hearty thanks to all the people who have contributed to those projects.
 
@@ -38,7 +38,7 @@ Organize your document with an `article` element inside your `body` tag. Inside 
 
 Tufte CSS uses `h1` for the document title, `p` with class `subtitle` for the document subtitle, `h2` for section headings, and `h3` for low-level headings. More specific headings are not supported. If you feel the urge to reach for a heading of level 4 or greater, consider redesigning your document:
 
-{{< blockquote cite="[‘Book design: advice and examples’ thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB)" footer="Edward Tufte" >}}
+{{< blockquote cite="[‘Book design: advice and examples’ thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB)" author="Edward Tufte" >}}
 \[It is\] notable that the Feynman lectures (3 volumes) write about all of physics in 1800 pages, using only 2 levels of hierarchical headings: chapters and A-level heads in the text. It also uses the methodology of _sentences_ which then cumulate sequentially into _paragraphs_, rather than the grunts of bullet points. Undergraduate Caltech physics is very complicated material, but it didn’t require an elaborate hierarchy to organize.
 {{< /blockquote >}}
 
@@ -63,15 +63,15 @@ As always, these design choices are merely one approach that Tufte CSS provides 
 
 ## Epigraphs
 
-{{< epigraph pre="George Orwell, " cite="Politics and the English Language" >}}
+{{< epigraph author="George Orwell" cite="Politics and the English Language" >}}
 The English language… becomes ugly and inaccurate because our thoughts are foolish, but the slovenliness of our language makes it easier for us to have foolish thoughts.
 {{< /epigraph >}}
 
-{{< epigraph pre="Richard P. Feynman, " cite="“What Do You Care What Other People Think?" >}}
+{{< epigraph author="Richard P. Feynman" cite="“What Do You Care What Other People Think?" >}}
 For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
 {{< /epigraph >}}
 
-{{< epigraph pre="Henri Matisse, " cite="Henri Matisse Dessins: thèmes et variations (Paris, 1943), 37" >}}
+{{< epigraph author="Henri Matisse" cite="Henri Matisse Dessins: thèmes et variations" detail=" (Paris, 1943), 37" >}}
 I do not paint things, I paint only the differences between things. of our language makes it easier for us to have foolish thoughts.
 {{< /epigraph >}}
 
@@ -99,7 +99,7 @@ You must manually assign a reference `id` to each side or margin note, replacing
 
 Immediately adjacent to that sidenote reference in the main text goes the sidenote content itself, in a `span` with class `sidenote`. This tag is also inserted directly in the middle of the body text, but is either pushed into the margin or hidden by default. Make sure to position your sidenotes correctly by keeping the sidenote-number label close to the sidenote itself.
 
-If you want a sidenote without footnote-style numberings, then you want a margin note.{{< marginnote ind="⊕" >}}This is a margin note. Notice there isn’t a number preceding the note.{{< /marginnote >}} On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its viewability-toggle is a symbol rather than a reference number. This document currently uses the symbol ⊕ (`&#8853;`), but it’s up to you. 
+If you want a sidenote without footnote-style numberings, then you want a margin note.{{< marginnote ind="⊕" >}}This is a margin note. Notice there isn’t a number preceding the note.{{< /marginnote >}} On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its view&shy;ability-toggle is a symbol rather than a reference number. This document currently uses the symbol ⊕ (`&#8853;`), but it’s up to you. 
 
 Margin notes are created just like sidenotes, but with the `marginnote` class for the content and the `margin-toggle` class for the label and dummy checkbox. For instance, here is the code for the margin note used in the previous paragraph:
 
@@ -122,7 +122,7 @@ Figures should try to use the `figure` element, which by default are constrained
 
 {{< figure
   src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/exports-imports.png"
-  caption="From Edward Tufte, _Visual Display of Quantitative Information_, page 92."
+  caption="From Edward Tufte, <cite>Visual Display of Quantitative Information</cite>, page 92."
   label="mn-export-import"
   alt="Exports and Imports to and from Denmark & Norway from 1700 to 1780"
 >}}
@@ -131,8 +131,8 @@ Figures should try to use the `figure` element, which by default are constrained
   src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/rhino.png"
   type="margin"
   label="mn-rhino"
-  caption="F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” _Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice_ (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s _Visual Explanations_."
-  alt="alt"
+  caption=`F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” _Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice_ (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s _Visual Explanations_.`
+  alt="Image of a Rhinoceros"
 >}}
 But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a `p` tag, as seen to the right of this paragraph.
 
@@ -142,12 +142,7 @@ If you need a full-width figure, give it the `fullwidth` class. Make sure that�
   src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/napoleons-march.png"
   type="full"
   label="mn-napoleonic-wars"
-  title="Napoleonic wars."
-  caption="This the image caption."
-  attr="Image attribution"
-  attrlink="attribute link"
-  alt="Napoleonic wars"
-  link="link"
+  alt="Figurative map of the successive losses of the French Army in the Russian campaign, 1812-1813"
 >}}
 
 One obstacle to creating elegant figures on the web is the difficulty of handling different screen sizes, especially on the fly. Embedded `iframe` elements are particularly troublesome. For these instances we provide a helper class, `iframe-wrapper`, the most common use for which is probably YouTube videos, e.g. 
@@ -159,6 +154,8 @@ One obstacle to creating elegant figures on the web is the difficulty of handlin
 ```
 
 {{< youtube id=YslQ2625TR4 title="iPhone Resolution by Edward Tufte" 4x3="true" >}}
+
+You can use this class on a `div` instead of a `figure`, with slightly different results but the same general effect. Experiment and choose depending on your application.
 
 
 ## Code
@@ -190,7 +187,7 @@ Extended code examples should live in a `code` element within a `pre` element. T
 
 ## ImageQuilts
 
-Tufte CSS provides support for Edward Tufte and Adam Schwartz’s [ImageQuilts](http://imagequilts.com/).{{< marginnote ind="⊕" >}}This is not supported as of 2023-04-17.{{< /marginnote >}} See the [ET forum announcement thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003wk) for more on quilts. Some have ragged edges, others straight. Include these images just as you would any other `figure`.
+Tufte CSS provides support for Edward Tufte and Adam Schwartz’s [ImageQuilts](http://imagequilts.com/).{{< marginnote ind="⚠" >}}It is not maintained as of 2023-04-17.{{< /marginnote >}} See the [ET forum announcement thread](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003wk) for more on quilts. Some have ragged edges, others straight. Include these images just as you would any other `figure`.
 
 This is an ImageQuilt surveying Chinese calligraphy, placed in a full-width figure to accomodate its girth:
 
