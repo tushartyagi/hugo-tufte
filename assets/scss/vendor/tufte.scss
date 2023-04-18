@@ -147,6 +147,10 @@ p {
     padding-right: 0;
     vertical-align: baseline;
     hyphens: auto;
+    -webkit-hyphenate-limit-before: 3;
+    -webkit-hyphenate-limit-after: 4;
+    -ms-hyphenate-limit-chars: 10 3 4;
+    hyphenate-limit-chars: 10 3 4;
 }
 
 /* Chapter Epigraphs */
@@ -405,6 +409,20 @@ label.marginnote-ind {
     display: none;
 }
 
+iframe.video {
+  width: 55%;
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+
+iframe.video--16x9 {
+  aspect-ratio: 16/9;
+}
+
+iframe.video--4x3 {
+  aspect-ratio: 4/3;
+}
+
 @media (max-width: 760px) {
     label.marginnote-ind {
         display: inline;
@@ -450,5 +468,8 @@ label.marginnote-ind {
     }
     img {
         width: 100%;
+    }
+    iframe.video {
+        width: 90%;
     }
 }

@@ -1,5 +1,6 @@
 {{ $alt := .Get "alt" | default "Image" }}
 {{ $type := .Get "type" | default "normal" }}
+{{- $ind := .Get "ind" | default .Site.Params.marginNoteInd -}}
 
 <!-- get a default label just in case -->
 {{- $label := printf "%#v" (add .Ordinal 1) | printf "%s%s" "marginfig-" | printf "%s" -}}
@@ -25,7 +26,7 @@
 {{- else -}}<!--  child for margin or normal (begin) -->
 
   {{- if or (or (.Get "caption") (.Get "attr")) (eq $type "margin") -}}<!-- begin marginnote -->
-    <label for="{{ $label }}" class="margin-toggle marginnote-ind">{{ .Site.Params.marginNoteInd }}</label>
+    <label for="{{ $label }}" class="margin-toggle marginnote-ind">{{ $ind }}</label>
     <input type="checkbox" id="{{ $label }}" class="margin-toggle"/>
     <span class="marginnote">
   {{- end -}}
