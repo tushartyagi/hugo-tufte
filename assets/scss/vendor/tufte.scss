@@ -310,7 +310,7 @@ table.fullwidth {
 
 div.table-wrapper {
     overflow-x: scroll;
-    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif, "Noto Emoji";
 }
 
 @media screen and (max-width: 760px) {
@@ -338,14 +338,14 @@ div.table-wrapper {
 }
 
 .sans {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif, "Noto Emoji";
     letter-spacing: 0.03em;
 }
 
 code,
 .code,
 kbd {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, "Noto Emoji";
     font-size: 1.125rem;
     line-height: 1.42;
 }

@@ -48,18 +48,52 @@ href="javascript:javascript:(function(){function checkFrames(w) {try {var inputs
 Toggle all notes
 {{< /button >}}
 
+```html
+{{</* button
+style="primary"
+icon="🔄"
+href="javascript:javascript:(function(){function checkFrames(w) {try {var inputs = w.document.getElementsByTagName('input');for (var i=0; i < inputs.length; i++) {if (inputs[i].type && inputs[i].type == 'checkbox'){inputs[i].checked = !inputs[i].checked;}}} catch (e){}if(w.frames && w.frames.length>0){for(var i=0;i<w .frames.length;i++){var fr=w.frames[i];checkFrames(fr);}}}checkFrames(window);})()"
+*/>}}
+Toggle all notes
+{{</* /button */>}}
+```
+
 
 ### Cols (with `lang` option)
 
+Certain things do not work with this shortcode layout, for example, Markdown's default footnote (like `[^1]`).
+
 {{< cols "zh-Hans,en,ja" >}}
-我是一个懒人。 {{< marginnote >}}这是一个边注。在屏幕很小的时候，它有一个可以点击展开的按钮。{{< /marginnote >}}{{< marginnote ind="🐱" >}}您可以在 `config.yaml` 中修改全站指示器，也可以使用 `ind` 选项为每一个边注单独设置按钮。{{< /marginnote>}}{{< marginnote ind="⚠" >}}在这个版本中，我提升了可访问性，但不包括[用不了 `:has` 的火狐](https://caniuse.com/css-has)。{{< /marginnote>}}
+我是一个懒人。 {{< marginnote >}}这是一个边注。在屏幕很小的时候，它有一个可以点击展开的按钮。{{< /marginnote >}}{{< marginnote ind="🐱" >}}您可以在 `config.yaml` 中修改全站按钮默认设置，也可以使用 `ind` 选项为每一个边注单独设置按钮。{{< /marginnote>}}{{< marginnote ind="⚠" >}}在这个版本中，我提升了可访问性，但不包括[用不了 `:has` 的火狐](https://caniuse.com/css-has)。{{< /marginnote>}}
 ||
 But sometimes you just have to get your hands dirty.
 
 This is the joy and the curse of a programmer. {{< sidenote >}}Sidenote numbers are consistent across the whole page. Good numbers.{{< /sidenote >}}
 ||
-さらに、なんと！日本語もいけます。 {{< sidenote >}}読めないのか？私は大丈夫だが。{{< /sidenote >}}
+さらに、なんと！日本語もいけます。{{< sidenote >}}読めないのか？私は大丈夫だが。{{< /sidenote >}}
 {{< /cols >}}
+
+```html
+{{</* cols "zh-Hans,en,ja" */>}}
+我是一个懒人。{{</* marginnote */>}}这是一个边注。{{</* /marginnote */>}}
+||
+But sometimes you just have to get your hands dirty.{{</* sidenote */>}}Good numbers.{{</* /sidenote */>}}
+||
+読めないのか？私は大丈夫だが。
+{{</* /cols */>}}
+```
+
+
+### YouTube-nocookie
+
+Never again click things in the video accidentally and it opens YouTube. Oh no.
+
+{{< youtube id="YslQ2625TR4" title="iPhone Resolution by Edward Tufte" >}}
+
+```html
+{{</* youtube id="YslQ2625TR4" title="iPhone Resolution by Edward Tufte" */>}}
+````
+
 
 ## Tufte features
 

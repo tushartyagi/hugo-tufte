@@ -123,6 +123,7 @@ Figures should try to use the `figure` element, which by default are constrained
 {{< figure
   src="https://github.com/edwardtufte/tufte-css/raw/gh-pages/img/exports-imports.png"
   caption="From Edward Tufte, <cite>Visual Display of Quantitative Information</cite>, page 92."
+  ind="⊕"
   label="mn-export-import"
   alt="Exports and Imports to and from Denmark & Norway from 1700 to 1780"
 >}}
@@ -132,6 +133,7 @@ Figures should try to use the `figure` element, which by default are constrained
   type="margin"
   label="mn-rhino"
   caption=`F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” _Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice_ (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s _Visual Explanations_.`
+  ind="⊕"
   alt="Image of a Rhinoceros"
 >}}
 But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a `p` tag, as seen to the right of this paragraph.
@@ -153,7 +155,7 @@ One obstacle to creating elegant figures on the web is the difficulty of handlin
 </figure>
 ```
 
-{{< youtube id=YslQ2625TR4 title="iPhone Resolution by Edward Tufte" 4x3="true" >}}
+{{< youtube id=YslQ2625TR4 title="iPhone Resolution by Edward Tufte" >}}
 
 You can use this class on a `div` instead of a `figure`, with slightly different results but the same general effect. Experiment and choose depending on your application.
 
