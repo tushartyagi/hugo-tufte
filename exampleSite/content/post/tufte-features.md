@@ -11,9 +11,9 @@ toc: true
 categories: [katex, latex, tufte-css]
 ---
 
-## loikein's features
+## New features
 
-### Emojis!
+### Emoji
 
 Powered by [Noto Emoji font](https://emojipedia.org/noto-emoji/).
 
