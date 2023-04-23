@@ -1,39 +1,37 @@
 <section>
 
 <h1 class="content-title">
-  {{ if .IsNode }}
-  {{ .Title }}
-  {{ else }}
-  {{ .Title }}{{ if .Draft }} :: Draft {{end}}
-  {{ end }}
+  {{- if .IsNode -}}
+  {{- .Title -}}
+  {{- else -}}
+  {{- .Title -}}{{- if .Draft -}} :: Draft {{- end -}}
+  {{- end -}}
 </h1>
 
-{{ if .IsPage }}
-  {{ if .Params.subtitle }}
-    <h3 class=subtitle>{{ .Params.subtitle }}</h3>
-  {{ end }}
+{{- if .IsPage -}}
+  {{- if .Params.subtitle -}}
+    <p class=subtitle>{{ .Params.subtitle }}</p>
+  {{- end -}}
 
-  {{ if or (eq .Type "post") (.Params.meta)  }}
+  {{- if or (eq .Type "post") (.Params.meta) -}}
     <span class="content-meta">
-      {{ if .Params.author }}
+      {{- if .Params.author -}}
       <p class="author">{{ .Params.author }}</p>
-      {{ end }}
+      {{- end -}}
 
-      {{ if not .Params.hidedate }}
+      {{- if not .Params.hidedate -}}
       <p class="date">{{ .Date.Format "2006-01-02" }}</p>
-      {{end }}
+      {{- end -}}
 
-      {{ if not .Params.hidereadtime }}
-      {{ .ReadingTime }} min read
-      {{ end }}
+      {{- if not .Params.hidereadtime -}}
+      <span>{{ .ReadingTime }} min read&nbsp;</span>
+      {{- end -}}
 
-      {{ if .Params.categories }}
-        {{ range .Params.categories }}
-          <a  href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-      {{ end }}
+      {{- range .Params.categories -}}
+      <a href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>&nbsp;
+      {{- end -}}
     </span>
-  {{ end }}
-{{ end }}
+  {{- end -}}
+{{- end -}}
 
   </section>

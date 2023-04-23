@@ -1,17 +1,17 @@
-// VENDOR
-@import "vendor/tufte.scss";
+// Tufte
+@import "tufte";
 
-// OUR CODE
+// Additional styles for Hugo
 @import "general";
 
-/// PAGES
+/// Pages
 @import "pages/footer";
 
-/// COMPONENTS
+/// Components
 @import "components/code-highlight";
 @import "components/toc";
 @import "components/nav";
-@import "components/header";
+@import "components/brand";
 @import "components/meta";
 
 // Look at this https://gohugo.io/hugo-pipes/resource-from-template/#readout

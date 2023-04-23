@@ -96,14 +96,14 @@ h3 {
     line-height: 1;
 }
 
-p.author, p.date {
+.author, .date {
   font-size: 1.4rem;
   font-weight: 400;
   margin: 1rem auto 1rem 0;
   line-height: 1;
 }
 
-p.subtitle {
+.subtitle {
     font-style: italic;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -130,7 +130,11 @@ section {
     padding-bottom: 1rem;
 }
 
-section.page-list .content-title:first-child {
+.page-list .content-title {
+    margin-top: 4.2rem;
+}
+
+.page-list .content-title:first-child {
     margin-top: 1.4rem;
 }
 
@@ -154,25 +158,24 @@ p {
 }
 
 /* Chapter Epigraphs */
-div.epigraph {
+.epigraph {
     margin: 3em 0;
 }
 
-div.epigraph > blockquote {
+.epigraph > blockquote {
     margin-top: 3em;
     margin-bottom: 3em;
 }
 
-div.epigraph > blockquote,
-div.epigraph > blockquote > p {
+.epigraph > blockquote {
     font-style: italic;
 }
 
-div.epigraph > blockquote > footer {
+.epigraph > blockquote > footer {
     font-style: normal;
 }
 
-div.epigraph > blockquote > footer > cite {
+.epigraph > blockquote > footer > cite {
     font-style: italic;
 }
 
@@ -373,7 +376,7 @@ pre.code {
     clear: both;
 }
 
-span.newthought {
+.newthought {
     font-variant: small-caps;
     font-size: 1.2em;
 }
