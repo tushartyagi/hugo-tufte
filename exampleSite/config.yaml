@@ -77,19 +77,19 @@ menu:
     - name: Posts
       weight: -100
       identifier: posts
-      url: /posts
+      url: /posts/
     - name: Categories
       weight: -90
       identifier: categories
-      url: /categories
+      url: /categories/
     - name: About
       weight: -80
       identifier: about
-      url: /about
+      url: /about/
     - name: Source Code
       weight: -70
       identifier: github
-      url: "https://github.com/slashformotion/hugo-tufte"
+      url: "https://github.com/loikein/hugo-tufte"
 # -----------------------------------------------------------------------
 # FOOTER MENU
 # If you need to add custom links to you footer: put them here.
