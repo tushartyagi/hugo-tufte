@@ -181,6 +181,10 @@ mjx-container[jax="CHTML"][display="true"],
   margin-left: 2rem;
 }
 
+.row .column > p:first-child {
+  margin-top: 0;
+}
+
 .row .column > p:last-child {
   margin-bottom: 0;
 }
