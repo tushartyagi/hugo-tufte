@@ -22,7 +22,9 @@
   {{ if .Description }}
   <p>{{ .Description }}</p>
   {{ else }}
+  {{ if .Site.Params.showSummary }}
   <p>{{ truncate 140 .Summary }}</p>
+  {{ end }}
   {{ end }}
 {{ end }}
 </section>
