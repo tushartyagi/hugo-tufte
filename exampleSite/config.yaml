@@ -10,10 +10,10 @@ hasCJKLanguage: true
 # The url of your website
 baseurl: "https://example.com/"
 # The title of your website (shown on all the pages)
-title: "Hugo-tufte Theme Example Site"
+title: "Hugo-Tufte Theme Example Site"
 canonifyurls: true
 # Number of posts per page on the home page
-paginate: 4
+paginate: 5
 
 # Only modify the following if you know what you are doing
 markup:
@@ -79,6 +79,10 @@ menu:
       weight: -100
       identifier: posts
       url: /posts/
+    - name: A-Book
+      weight: -95
+      identifier: book
+      url: /exampleBook/
     - name: Categories
       weight: -90
       identifier: categories
