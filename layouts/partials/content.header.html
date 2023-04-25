@@ -1,10 +1,6 @@
 <section>
 <h1 class="content-title">
-  {{- if .IsNode -}}
-  {{- .Title -}}
-  {{- else -}}
-  {{- .Title -}}{{- if .Draft -}} :: Draft {{- end -}}
-  {{- end -}}
+{{- .Title -}}{{- if .Draft -}} :: Draft {{- end -}}
 </h1>
 
 {{- if .IsPage -}}
@@ -12,7 +8,7 @@
   <p class=subtitle>{{ .Params.subtitle }}</p>
   {{- end -}}
 
-  {{- if or (eq .Type "post") (.Params.meta) -}}
+  {{- if .Params.meta -}}
   <span class="content-meta">
     {{- if .Params.author -}}
     <p class="author">{{ .Params.author }}</p>

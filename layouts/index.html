@@ -1,26 +1,54 @@
 {{ define "main" }}
 <article id="main" class="home-page">
-  {{ partial "brand.html" . }}
-  {{ with .Content }}
-    <section>
-    {{ . }}
-    </section>
-  {{ end }}
-  <section class="page-list">
-  {{ range .Site.RegularPages }}
-  {{/* range where .Site.RegularPages "Type" "posts" */}}
-    {{ if ne .Draft true}}
-    <h2 class="content-title">
-      {{ if .IsNode }}
-      <a href="{{ .Permalink }}">{{ .Title}}</a>
-      {{ else }}
-      <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
-      {{ end }}
-    </h1>
-    <p>{{ truncate 140 .Summary }}</p>
-    {{ end }}
-  {{ end }}
+{{ partial "brand.html" . }}
+{{ with .Content }}
+  <section>
+  {{ . }}
   </section>
-  {{ partial "footer.html" . }}
+{{ end }}
+<section class="page-list">
+{{ range (.Paginate .Site.RegularPages).Pages }}
+{{/* range where .Site.RegularPages "Type" "posts" */}}
+{{ if ne .Draft true}}
+  <h2 class="content-title">
+  {{ if .IsNode }}
+  <a href="{{ .Permalink }}">{{ .Title}}</a>
+  {{ else }}
+  <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
+  {{ end }}
+  </h2>
+
+  {{ if .Description }}
+  <p>{{ .Description }}</p>
+  {{ else }}
+  <p>{{ truncate 140 .Summary }}</p>
+  {{ end }}
+
+{{ end }}
+{{ end }}
+</section>
+
+{{ if and (.Paginator) (gt .Paginator.TotalPages 1) }}
+<hr />
+
+<span class="previous-page">
+{{ if .Paginator.HasPrev }}
+<a class="link-reverse" href="{{.Paginator.Prev.URL}}">«</a>
+{{ end }}
+</span>
+
+<span class="pagination-indicator">
+{{.Paginator.PageNumber}} / {{.Paginator.TotalPages}}
+</span>
+
+<span class="next-page">
+{{ if .Paginator.HasNext }}
+<a class="link-reverse" href="{{.Paginator.Next.URL}}">»</a>
+{{ end }}
+</span>
+
+{{ end }}
+
+{{ partial "footer.html" . }}
 </article>
 {{ end }}
