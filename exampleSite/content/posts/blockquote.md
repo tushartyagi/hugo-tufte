@@ -1,10 +1,9 @@
-+++
-author = "Hiro Protagonist"
-date = "2015-01-19T23:57:58-08:00"
-hasMath = false
-title = "Blockquotes"
-
-+++
+---
+author: Hiro Protagonist
+date: '2015-01-19T23:57:58-08:00'
+hasMath: false
+title: Blockquotes
+---
 
 Below is a blockquote.
 
@@ -34,4 +33,6 @@ And finally a blockquote with some markdown.
 > 
 > Here's some example code:
 > 
->     return shell_exec("echo $input | $markdown_script");
+> ```sh
+> return shell_exec("echo $input | $markdown_script");
+> ```

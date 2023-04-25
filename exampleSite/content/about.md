@@ -1,8 +1,8 @@
 ---
 title: "About This Site"
-hasMath: false 
+hasMath: false
+_build:
+  list: never
 ---
 
-Hello, I post random things here.
-
-This site is generated with [Hugo](https://gohugo.io/). This theme is a heavily modified version of [hugo-tufte](https://github.com/loikein/hugo-tufte), originally written by [Dave Liepmann, Edward Tufte, and various contributors](https://github.com/edwardtufte/tufte-css), then ported to Hugo by [shawnohare](https://github.com/shawnohare/hugo-tufte) and [slashformotion](https://github.com/slashformotion/hugo-tufte).
+This is the example site for [hugo-tufte](https://github.com/loikein/hugo-tufte), a theme for the static site generator [Hugo](https://gohugo.io/).

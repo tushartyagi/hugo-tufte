@@ -12,6 +12,8 @@ baseurl: "https://example.com/"
 # The title of your website (shown on all the pages)
 title: "Hugo-tufte Theme Example Site"
 canonifyurls: true
+# Number of posts per page on the home page
+paginate: 4
 
 # Only modify the following if you know what you are doing
 markup:
@@ -20,7 +22,6 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
-    pygmentsUseClasses: true
     guessSyntax: true
 
 params:
@@ -31,7 +32,7 @@ params:
   # Dark code highlighting
   codeblocksdark: false
   # Customize the indicator for margin notes
-  # Some suggestions: 💬, 💭, 📑, 🏷, ✍, 💡, 🧐, 📎, 📌
+  # Some suggestions: ⊕, 💬, 💭, 📑, 🏷, ✍, 💡, 🧐, 📎, 📌
   marginNoteInd: "⊕"
   # Your name or the name of you company
   # copyright: Copyright 2023
@@ -40,7 +41,7 @@ params:
   showPoweredBy: false
   # Site wide kill switch
   hidedate: false
-  # Site wide kill switch for Latex support
+  # Site wide kill switch for LaTeX support
   math: true
   KaTeXVersion: 0.16.4
   KaTeXCDN: "//cdn.jsdelivr.net/npm"

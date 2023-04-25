@@ -1,6 +1,6 @@
 ---
 author: Totally famous person
-date: '2016-02-20T13:56:01-08:00'
+date: '2023-04-16T16:03:45+0100'
 title: The big old test page
 subtitle: Fancy Subtitle
 meta: true
@@ -9,6 +9,7 @@ toc: true
 # hideDate: true
 # hideReadTime: true
 categories: [katex, latex, tufte-css]
+description: "If the description field is not empty, its contents will show in the home page instead of the first 140 characters of the post."
 ---
 
 ## New features

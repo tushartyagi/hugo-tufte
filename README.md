@@ -69,7 +69,7 @@ Downside: LaTeX in post title is no longer supported.
 
 ### Site Parameters
 
-The site specific parameters that this theme recognizes are:
+`params` for this theme are:
 
 - `subtitle` string: If set, displayed under the main title.
 - `showPoweredBy` boolean: If `true`, display a shoutout to Hugo and this theme.
@@ -111,7 +111,7 @@ Please see [`exampleSite/config.yaml`](https://github.com/loikein/hugo-tufte/blo
 - Layout parameters: (NEW)
   + For more information, see [Hugo's Lookup Order | Hugo](https://gohugo.io/templates/lookup-order/).
   + `type` string: If set to `book`, layout files in [./layouts/book/](https://github.com/loikein/hugo-tufte/tree/main/layouts/book) will be prioritised.
-  + `layout` string: If set, layout files with this same will be prioritised.
+  + `layout` string: If set, layout files with the name of this field's value will be prioritised.
 
 ### Shortcodes
 
