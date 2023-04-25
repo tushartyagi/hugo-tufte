@@ -13,6 +13,18 @@
 {{ end }}
 
 <section class="list-page">
+<!-- preambles -->
+
+<ul>
+{{ range .Pages.ByTitle }}
+{{ if .IsPage }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
+{{ end }}
+{{ end }}
+</ul>
+
+<!-- sub categories & pages -->
+
 {{ $indexScratch := .Scratch }}
 {{ range .Sections }}
 {{ $indexScratch.Add "sections" (slice . ) }}

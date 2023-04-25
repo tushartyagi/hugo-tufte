@@ -197,11 +197,11 @@ mjx-container[jax="CHTML"][display="true"],
     grid-auto-flow: column;
     /* above 2 lines are equivalent as below 1 line */
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    gap: 1.3rem;
-    margin: 0 0 1rem 0;
+    gap: 1.4rem;
+    margin: 0 0 1.4rem 0;
   }
   .row .column {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 }
 
@@ -250,8 +250,8 @@ mjx-container[jax="CHTML"][display="true"],
 
 /* reduce zh & ja font-size to match en */
 
-p:lang(zh),
-p:lang(ja) {
+p:lang(zh), span:lang(zh),
+p:lang(ja), span:lang(ja), {
     font-size: 1.2rem;
 }
 
