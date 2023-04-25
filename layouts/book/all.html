@@ -19,10 +19,10 @@
 {{ end }}
 
 {{- range ($indexScratch.Get "sections").ByTitle -}}
-<p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+<p><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></p>
 <ul>
   {{- range .Pages.ByTitle -}}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
   {{- end -}}
 </ul>
 {{- end -}}

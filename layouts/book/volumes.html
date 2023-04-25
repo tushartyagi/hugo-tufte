@@ -7,11 +7,17 @@
 
 {{ partial "content.header.html" . }}
 
+{{ with .Content }}
+<section>
+{{ . }}
+</section>
+{{ end }}
+
 <section class="list-page">
 <ul>
 {{ range .Pages.ByTitle }}
 {{ if .IsSection }}
-<li><a href="{{ .RelPermalink }}">{{.Title}}</a></li>
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
 {{ end }}
 {{ end }}
 </ul>

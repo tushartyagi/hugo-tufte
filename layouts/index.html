@@ -7,9 +7,10 @@
   </section>
 {{ end }}
 <section class="page-list">
-{{ range (.Paginate .Site.RegularPages).Pages }}
-{{/* range where .Site.RegularPages "Type" "posts" */}}
-{{ if ne .Draft true}}
+{{ $pgFilter1 := where .Site.RegularPages "Draft" false }}
+{{ $pgFilter2 := where .Site.RegularPages "Params.date" "!=" nil }}
+{{ $pgFilter := $pgFilter1 | intersect $pgFilter2 }}
+{{ range (.Paginate $pgFilter).Pages }}
   <h2 class="content-title">
   {{ if .IsNode }}
   <a href="{{ .Permalink }}">{{ .Title}}</a>
@@ -23,8 +24,6 @@
   {{ else }}
   <p>{{ truncate 140 .Summary }}</p>
   {{ end }}
-
-{{ end }}
 {{ end }}
 </section>
 
