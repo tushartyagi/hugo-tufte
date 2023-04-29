@@ -213,30 +213,8 @@ dt, dd {
     padding: 0.5rem 0;
 }
 
-dl {
-    display: grid;
-    gap: 0 1rem;
-}
-
 dt {
     font-weight: 700;
-    grid-column: 1;
-}
-
-dd {
-    margin-bottom: 0;
-    margin-left: 1rem;
-}
-
-@media (min-width: 760px) {
-  dl {
-    grid-template-columns: fit-content(50%) auto;
-  }
-
-  dd {
-    grid-column: 2;
-    margin-left: 0;
-  }
 }
 
 figure {
