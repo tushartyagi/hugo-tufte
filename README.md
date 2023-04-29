@@ -63,7 +63,7 @@ Then run `hugo server --buildDrafts --disableFastRender` and open `localhost:131
 
 In this version, I use [Yihui Xie's method](https://yihui.org/en/2018/07/latex-math-markdown/) to support (almost) seamless LaTeX rendering with [KaTeX](https://katex.org/).
 
-For usage and examples, refer to [./exampleSite/content/post/tufte-features.md ](https://github.com/loikein/hugo-tufte/blob/main/exampleSite/content/post/tufte-features.md).
+For usage and examples, refer to [./exampleSite/content/posts/tufte-features.md ](https://github.com/loikein/hugo-tufte/blob/main/exampleSite/content/posts/tufte-features.md).
 
 Downside: LaTeX in post title is no longer supported.
 
@@ -118,7 +118,7 @@ Please see [`exampleSite/config.yaml`](https://github.com/loikein/hugo-tufte/blo
 This theme provides the following shortcodes in an attempt to completely
 support all the features present in the [Tufte-css](https://github.com/edwardtufte/tufte-css) project.
 
-For usage and examples, refer to [./exampleSite/content/post/tufte-features.md ](https://github.com/loikein/hugo-tufte/blob/main/exampleSite/content/post/tufte-features.md).
+For usage and examples, refer to [./exampleSite/content/posts/tufte-features.md ](https://github.com/loikein/hugo-tufte/blob/main/exampleSite/content/posts/tufte-features.md).
 
 - `blockquote`
 - `div`
