@@ -83,7 +83,7 @@ menu:
     - name: A-Book
       weight: -95
       identifier: book
-      url: /exampleBook/
+      url: /a-book/
     - name: Categories
       weight: -90
       identifier: categories
