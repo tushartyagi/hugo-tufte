@@ -1,3 +1,3 @@
-module github.com/slashformotion/hugo-tufte
+module github.com/loikein/hugo-tufte
 
 go 1.17
