@@ -67,12 +67,12 @@ As always, these design choices are merely one approach that Tufte CSS provides 
 The English language… becomes ugly and inaccurate because our thoughts are foolish, but the slovenliness of our language makes it easier for us to have foolish thoughts.
 {{< /epigraph >}}
 
-{{< epigraph author="Richard P. Feynman" cite="“What Do You Care What Other People Think?" >}}
+{{< epigraph author="Richard P. Feynman" cite="What Do You Care What Other People Think?" >}}
 For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
 {{< /epigraph >}}
 
 {{< epigraph author="Henri Matisse" cite="Henri Matisse Dessins: thèmes et variations" detail=" (Paris, 1943), 37" >}}
-I do not paint things, I paint only the differences between things. of our language makes it easier for us to have foolish thoughts.
+I do not paint things, I paint only the differences between things.
 {{< /epigraph >}}
 
 If you’d like to introduce your page or a section of your page with some quotes, use epigraphs. Modeled after chapter epigraphs in Tufte’s books (particularly _Beautiful Evidence_), these are `blockquote` elements with a bit of specialized styling. Quoted text is italicized. The source goes in a `footer` element inside the `blockquote`. We have provided three examples in the epigraph of this section, demonstrating shorter and longer quotes, with and without a paragraph tag, and showing how multiple quotes within an epigraph fit together with the use of a wrapper class. 
