@@ -14,26 +14,21 @@
 <section class="list-page">
 <!-- preambles -->
 
+{{- if .RegularPages -}}
 <ul>
-{{ range .Pages.ByTitle }}
-{{ if .IsPage }}
-<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
-{{ end }}
-{{ end }}
+  {{ range .RegularPages.ByTitle -}}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+  {{ end -}}
 </ul>
+{{- end -}}
 
 <!-- sub categories & pages -->
 
-{{ $indexScratch := .Scratch }}
-{{ range .Sections }}
-{{ $indexScratch.Add "sections" (slice . ) }}
-{{ end }}
-
-{{- range ($indexScratch.Get "sections").ByTitle -}}
-<p><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></p>
+{{- range .Sections.ByTitle -}}
+<p><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></p>
 <ul>
-  {{- range .Pages.ByTitle -}}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
+  {{- range .RegularPages.ByTitle -}}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
   {{- end -}}
 </ul>
 {{- end -}}

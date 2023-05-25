@@ -15,23 +15,24 @@
 
 <!-- preambles -->
 
+{{- if .RegularPages -}}
 <ul>
-{{ range .Pages.ByTitle }}
-{{ if .IsPage }}
-<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
-{{ end }}
+{{ range .RegularPages.ByTitle }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
 {{ end }}
 </ul>
+{{- end -}}
 
 <!-- sub categories -->
 
+{{- if .Sections -}}
 <ul>
-{{ range .Pages.ByTitle }}
-{{ if .IsSection }}
-<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
-{{ end }}
+{{ range .Sections.ByTitle }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
 {{ end }}
 </ul>
+{{- end -}}
+
 </section>
 
 {{ partial "footer.html" . }}

@@ -15,7 +15,7 @@
 <ul>
 {{ range .Pages.ByTitle }}
 {{ if .IsPage }}
-<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}} :: Draft {{- end -}}</a></li>
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
 {{ end }}
 {{ end }}
 </ul>
