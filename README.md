@@ -78,6 +78,8 @@ Downside: LaTeX in post title is no longer supported.
 - `math` boolean: Site wide kill switch for Latex support
 - `codeBlocksDark` boolean: If `true`, code blocks will use a dark theme.
 - `marginNoteInd` string: (NEW) Custom indicator for margin notes, with suggestions in comment. (Only displayed on mobile devices or inside `cols` shortcode.)
+- `sansSubtitle` boolean: If `true`, all subtitles (`h2` \& `h3`) will use up-right and sans-serif font. (As seen in _Visual Display of Quantitative Information_.)
+- (`centerArticle` boolean: Not implemented yet)
 
 **Socials**
 
